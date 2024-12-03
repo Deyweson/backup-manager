@@ -1,0 +1,28 @@
+.message-modal-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 279px;
+  height: 461px;
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.message-modal{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.377);
+  border-radius: 10px;
+  margin: 0px 20px;
+}
+
+.message-modal p {
+  margin: 20px;
+}
