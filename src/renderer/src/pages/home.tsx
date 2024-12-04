@@ -8,15 +8,13 @@ export function Home(): JSX.Element {
       <h1>SQL Backup Tool</h1>
       <div className="home-btns">
         <button onClick={() => navigate('/backup')}>Backup</button>
-        <button disabled>
-          <p>Restore</p>
-          <p style={{ fontSize: '12px' }}> (not available)</p>
-        </button>
+        <button onClick={() => navigate('/restore')}>Restore</button>
       </div>
       <div className="home-database-list">
         <h2>Suported Database:</h2>
         <ul>
           <li>PostgreSQL</li>
+          <li>MySQL</li>
         </ul>
       </div>
 

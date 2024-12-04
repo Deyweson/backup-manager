@@ -4,7 +4,9 @@ import { IDatabase } from './models/database'
 
 // Custom APIs for renderer
 const api = {
-  Backup: (data: IDatabase): Promise<string> => ipcRenderer.invoke('backup', data)
+  Backup: (data: IDatabase): Promise<string> => ipcRenderer.invoke('backup', data),
+  Restore: (data: IDatabase): Promise<string> => ipcRenderer.invoke('restore', data),
+  SelectFile: (): Promise<string> => ipcRenderer.invoke('select-file')
 }
 
 // Use `contextBridge` APIs to expose Electron APIs to

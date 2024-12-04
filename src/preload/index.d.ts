@@ -3,6 +3,8 @@ import IDatabase from './models/database'
 
 interface IApi {
   Backup: (data: IDatabase) => Promise<string>
+  Restore: (data: IDatabase) => Promise<string>
+  SelectFile: () => Promise<string>
 }
 
 declare global {

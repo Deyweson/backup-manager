@@ -6,7 +6,7 @@
   padding: 30px;
 }
 
-.home-btns{
+.home-btns {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -22,7 +22,7 @@
   cursor: pointer;
 }
 
-.home button:disabled{
+.home button:disabled {
   background-color: rgba(0, 0, 0, 0.349);
 }
 
@@ -38,9 +38,10 @@
 
 .home li {
   font-size: 14px;
+  text-align: center;
 }
 
-.home-database-list{
+.home-database-list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,8 +51,7 @@
   margin-bottom: 5px;
 }
 
-.version{
+.version {
   text-align: center;
   font-size: 14px;
 }
-

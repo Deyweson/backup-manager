@@ -2,12 +2,14 @@ import { app, shell, BrowserWindow } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
-import { Backup } from './services/backup'
+import { Backup } from './services/backup/backup'
+import { Restore } from './services/restore/restore'
+import { SelectFile } from './services/select-file'
 
 function createWindow(): void {
   const mainWindow = new BrowserWindow({
     width: 300,
-    height: 500,
+    height: 600,
     resizable: false,
     show: false,
     fullscreenable: false,
@@ -41,6 +43,8 @@ app.whenReady().then(() => {
   })
 
   Backup()
+  Restore()
+  SelectFile()
   createWindow()
 
   app.on('activate', function () {

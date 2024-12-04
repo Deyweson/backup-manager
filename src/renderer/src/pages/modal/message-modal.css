@@ -10,9 +10,7 @@
   justify-content: center;
 }
 
-
-.message-modal{
-  
+.message-modal {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
