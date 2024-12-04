@@ -12,7 +12,8 @@ const dbSchema = z.object({
   port: z.string().nonempty(),
   user: z.string().nonempty(),
   password: z.string().nonempty(),
-  database: z.string().nonempty()
+  database: z.string().nonempty(),
+  backupname: z.string().nonempty()
 })
 export type DBSchema = z.infer<typeof dbSchema>
 
@@ -53,7 +54,7 @@ export function BackupPage(): JSX.Element {
     <div className="backup-page">
       {loading ? <Loader /> : <></>}
       {modal ? <MessageModal message={message} setModal={setModal} /> : <></>}
-      <h1>Backup Manager</h1>
+      <h1>SQL Backup Tool</h1>
       <form onSubmit={handleSubmit(submit)}>
         <div>
           <label>Hostname:</label>
@@ -99,6 +100,16 @@ export function BackupPage(): JSX.Element {
             style={{ borderColor: errors.database ? 'red' : '' }}
           />
         </div>
+
+        <div>
+          <label>Backup Name:</label>
+          <input
+            type="text"
+            {...register('backupname')}
+            style={{ borderColor: errors.database ? 'red' : '' }}
+          />
+        </div>
+
         <button>Backup</button>
       </form>
 

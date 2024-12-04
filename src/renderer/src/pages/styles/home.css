@@ -40,3 +40,18 @@
   font-size: 14px;
 }
 
+.home-database-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home-database-list h2 {
+  margin-bottom: 5px;
+}
+
+.version{
+  text-align: center;
+  font-size: 14px;
+}
+

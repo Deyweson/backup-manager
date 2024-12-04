@@ -17,8 +17,7 @@ export function Backup(): void {
     }
 
     process.env.PGPASSWORD = data.password
-    const date = new Date()
-    const backupName = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}_backup.sql`
+    const backupName = `${data.backupname}_backup.sql`
     const backupPath = path.join(app.getPath('documents'), 'backups/')
     const backupCommand = `${binPath} -h ${data.hostname} -p ${data.port} -U ${data.user} -F t -d ${data.database} -f ${backupPath + backupName}`
 

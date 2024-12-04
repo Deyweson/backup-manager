@@ -5,7 +5,7 @@ export function Home(): JSX.Element {
   const navigate = useNavigate()
   return (
     <div className="home">
-      <h1>Backup Manager</h1>
+      <h1>SQL Backup Tool</h1>
       <div className="home-btns">
         <button onClick={() => navigate('/backup')}>Backup</button>
         <button disabled>
@@ -13,11 +13,14 @@ export function Home(): JSX.Element {
           <p style={{ fontSize: '12px' }}> (not available)</p>
         </button>
       </div>
+      <div className="home-database-list">
+        <h2>Suported Database:</h2>
+        <ul>
+          <li>PostgreSQL</li>
+        </ul>
+      </div>
 
-      <h2>Suported Database:</h2>
-      <ul>
-        <li>PostgreSQL</li>
-      </ul>
+      <p className="version">v.0.0.1</p>
     </div>
   )
 }

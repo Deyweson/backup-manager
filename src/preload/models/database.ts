@@ -4,4 +4,5 @@ export interface IDatabase {
   user: string
   password: string
   database: string
+  backupname:string
 }

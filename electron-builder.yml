@@ -1,5 +1,5 @@
 appId: com.electron.app
-productName: backup-manager
+productName: sql-backup-tool
 directories:
   buildResources: build
 files:
