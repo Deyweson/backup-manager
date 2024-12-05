@@ -4,9 +4,10 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import './backup-page.css'
 import { Loader } from '../components/loader/loader'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { MessageModal } from '../modal/message-modal'
 import { InputBackup } from './components/input-backup'
+import { GetLocalStorage, SetLocalStorage } from '@renderer/utils/localstorage'
 
 export const dbSchema = z.object({
   hostname: z.string().nonempty(),
@@ -28,13 +29,26 @@ export function BackupPage(): JSX.Element {
   const {
     register,
     formState: { errors },
-    handleSubmit
+    handleSubmit,
+    setValue
   } = useForm<DBSchema>({
     resolver: zodResolver(dbSchema)
   })
 
+  useEffect(() => {
+    const inputs = GetLocalStorage()
+    if (inputs !== null) {
+      setValue('hostname', inputs.hostname)
+      setValue('port', inputs.port)
+      setValue('user', inputs.user)
+      setValue('password', inputs.password)
+      setValue('database', inputs.database)
+    }
+  }, [])
+
   async function submit(data: DBSchema): Promise<void> {
     try {
+      SetLocalStorage(data)
       setLoading(true)
       const response = await window.api.Backup(data)
       console.log(response)
@@ -59,7 +73,7 @@ export function BackupPage(): JSX.Element {
       <form onSubmit={handleSubmit(submit)}>
         <select className="dboption" {...register('dboption')}>
           <option value="pg_dump">PostgreSQL</option>
-          <option value="mysql_dump">MySQL</option>
+          <option value="mysql">MySQL</option>
         </select>
 
         <InputBackup label="Hostname:" field="hostname" register={register} error={errors.hostname} />

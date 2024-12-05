@@ -13,9 +13,10 @@ export function Backup(): void {
       backupCommand = BackupPSQL(data)
       console.log(backupCommand)
     }
-    if (data.dboption === 'mysql_dump') {
+    if (data.dboption === 'mysql') {
       process.env.MYSQL_PWD = data.password
       backupCommand = BackupMYSQL(data)
+      console.log(backupCommand)
     }
 
     try {

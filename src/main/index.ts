@@ -5,6 +5,7 @@ import icon from '../../resources/icon.png?asset'
 import { Backup } from './services/backup/backup'
 import { Restore } from './services/restore/restore'
 import { SelectFile } from './services/select-file'
+import { CreateFolder } from './services/create-folder'
 
 function createWindow(): void {
   const mainWindow = new BrowserWindow({
@@ -45,6 +46,7 @@ app.whenReady().then(() => {
   Backup()
   Restore()
   SelectFile()
+  CreateFolder()
   createWindow()
 
   app.on('activate', function () {

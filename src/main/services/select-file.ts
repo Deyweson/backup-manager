@@ -5,7 +5,7 @@ export function SelectFile(): void {
   ipcMain.handle('select-file', async () => {
     const result = await dialog.showOpenDialog({
       properties: ['openFile'],
-      defaultPath: path.join(app.getPath('documents'), 'backups')
+      defaultPath: path.join(app.getPath('documents'), 'sql-backup-tool')
     })
 
     if (!result.canceled && result.filePaths.length > 0) {

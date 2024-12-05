@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { InputBackup } from '../backup-page/components/input-backup'
 import { useNavigate } from 'react-router-dom'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { MessageModal } from '../modal/message-modal'
 import { Loader } from '../components/loader/loader'
+import { GetLocalStorage } from '@renderer/utils/localstorage'
 
 export const dbSchema = z.object({
   hostname: z.string().nonempty(),
@@ -56,6 +57,17 @@ export function RestorePage(): JSX.Element {
     setValue('backupname', result)
   }
 
+  useEffect(() => {
+    const inputs = GetLocalStorage()
+    if (inputs !== null) {
+      setValue('hostname', inputs.hostname)
+      setValue('port', inputs.port)
+      setValue('user', inputs.user)
+      setValue('password', inputs.password)
+      setValue('database', inputs.database)
+    }
+  }, [])
+
   return (
     <div className="backup-page">
       {loading ? <Loader /> : <></>}
@@ -64,7 +76,7 @@ export function RestorePage(): JSX.Element {
       <form onSubmit={handleSubmit(submit)}>
         <select className="dboption" {...register('dboption')}>
           <option value="pg_restore">PostgreSQL</option>
-          <option value="mysql_dump">MySQL</option>
+          <option value="mysql">MySQL</option>
         </select>
 
         <InputBackup label="Hostname:" field="hostname" register={register} error={errors.hostname} />

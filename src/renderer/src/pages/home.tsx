@@ -1,8 +1,16 @@
 import { useNavigate } from 'react-router-dom'
 import './styles/home.css'
+import { useEffect } from 'react'
+import { GetLocalStorage } from '@renderer/utils/localstorage'
 
 export function Home(): JSX.Element {
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const local = GetLocalStorage()
+    console.log(local)
+  }, [])
+
   return (
     <div className="home">
       <h1>SQL Backup Tool</h1>
