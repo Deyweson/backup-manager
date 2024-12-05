@@ -13,7 +13,7 @@ asarUnpack:
   - resources/**
   - bin/**
 win:
-  executableName: backup-manager
+  executableName: sql-backup-tool
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}
