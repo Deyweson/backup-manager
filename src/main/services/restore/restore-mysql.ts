@@ -6,7 +6,6 @@ export async function RestoreMYSQL(data: IDatabase): Promise<string> {
   const { hostname, port, user, database, backupname, dboption } = data
 
   try {
-    console.log(`${BinPath(dboption)} -h ${hostname} -P ${port} -u ${user} -e "CREATE DATABASE IF NOT EXISTS ${database};"`)
     const response = await execCommand(`${BinPath(dboption)} -h ${hostname} -P ${port} -u ${user} -e "CREATE DATABASE IF NOT EXISTS ${database};"`)
     console.log(response)
   } catch (er) {

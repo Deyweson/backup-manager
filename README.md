@@ -2,6 +2,8 @@
 
 Ferramenta para realizar **backups** e **restaurações** de bancos de dados SQL, com suporte para **MySQL** e **PostgreSQL**.
 
+[Como usar](./como-usar.md)
+
 ## Funcionalidades
 
 - **Backup** de bancos de dados:
@@ -22,9 +24,9 @@ Ferramenta para realizar **backups** e **restaurações** de bancos de dados SQL
 
 ## TODO
 
-- [ ] **Salvar os dados de backup/restauração** no **localstore** para tornar o processo mais dinâmico.
-- [ ] **Implementar a funcionalidade de restauração para MySQL**.
-- [ ] **Realizar testes das funcionalidades** para garantir a estabilidade e correção do sistema.
+- [x] **Salvar os dados de backup/restauração** no **localstore** para tornar o processo mais dinâmico.
+- [x] **Implementar a funcionalidade de restauração para MySQL**.
+- [x] **Realizar testes das funcionalidades** para garantir a estabilidade e correção do sistema.
 
 ## Contribuições
 
@@ -37,17 +39,14 @@ Uma das formas de contribuir é testando em versões alternativas e enviando os 
 Este projeto está licenciado sob a licença MIT.
 
 
-# Imagens do Projeto
+# Preview
 
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
   <img style="border:1px solid black" src="./readme/Screenshot_1.png" alt="Postgres Logo" width="200" />
-  <img style="border:1px solid black" src="./readme/Screenshot_2.png" alt="Postgres Logo" width="200" />
   <img style="border:1px solid black" src="./readme/Screenshot_3.png" alt="Postgres Logo" width="200" />
-  <img style="border:1px solid black" src="./readme/Screenshot_4.png" alt="Postgres Logo" width="200" />
   <img style="border:1px solid black" src="./readme/Screenshot_5.png" alt="Postgres Logo" width="200" />
   <img style="border:1px solid black" src="./readme/Screenshot_6.png" alt="Postgres Logo" width="200" />
   <img style="border:1px solid black" src="./readme/Screenshot_7.png" alt="Postgres Logo" width="200" />
   <img style="border:1px solid black" src="./readme/Screenshot_8.png" alt="Postgres Logo" width="200" />
-  <img style="border:1px solid black" src="./readme/Screenshot_9.png" alt="Postgres Logo" width="200" />
 </div>

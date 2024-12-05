@@ -26,7 +26,7 @@ export function Home(): JSX.Element {
         </ul>
       </div>
 
-      <p className="version">v.0.0.1</p>
+      <p className="version">v.1.0.0</p>
     </div>
   )
 }
